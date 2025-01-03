@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Variables */
+@layer base {
+  :root {
+    --background: 222.2 47.4% 7%;
+    --foreground: 210 40% 95%;
+    --card: 222.2 47.4% 10%;
+    --card-foreground: 210 40% 95%;
+    --popover: 222.2 47.4% 9%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 210 80% 35%;
+    --primary-foreground: 210 40% 95%;
+    --secondary: 222.2 47.4% 12%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 222.2 47.4% 8%;
+    --muted-foreground: 210 40% 70%;
+    --accent: 210 85% 40%;
+    --accent-foreground: 210 40% 95%;
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 210 40% 95%;
+    --border: 222.2 47.4% 12%;
+--input: hsl(222, 93%, 49%);
+    --ring: 210 80% 40%;
+    --radius: 0.5rem;
+  }
+
+  /* Hide default media controls */
+  :state(ms-media-controls-enclosure) {
+    display: none !important;
+  }
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15%; /* Adjust to fit the desired effect */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Typing Animation */
+.typing-animation {
+  @apply inline-block font-mono text-sm overflow-hidden whitespace-nowrap;
+  width: 0; /* Initial width */
+  animation: typing 2s steps(7) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Loader */
+.loading-dots::after {
+  content: '...';
+  animation: blink 1s infinite;
+}
+
+.loader-container {
+  @apply flex justify-center items-center w-full;
+}
+
+.loader-video {
+  @apply w-24 h-24; /* Adjusted loader size */
+}
+
+/* Movie Card Styles */
+.movie-card {
+  @apply relative transition-transform duration-300 ease-in-out;
+}
+
+.movie-card:hover {
+  @apply transform scale-105 z-10;
+}
+
+.movie-card-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.movie-card:hover .movie-card-overlay {
+  @apply opacity-100;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent;
+}
+
+/* Section Title */
+.section-title {
+  @apply text-2xl font-bold mb-4 text-foreground/90;
+}
+
+/* Video Player */
+.video-player {
+  @apply rounded-lg overflow-hidden shadow-2xl;
+}
+
+/* Quality Buttons */
+.quality-button {
+  @apply px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200;
+}
+
+.quality-button.active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.quality-button.inactive {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+/* Horizontal Scrolling */
+.movies-scroll-container {
+  @apply flex gap-4 overflow-x-auto pb-4;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.movies-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
