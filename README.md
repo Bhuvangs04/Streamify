@@ -1,12 +1,12 @@
 # streaming-platform
 
 # BACKEND
-Node.js
-Express.js(routes,models,middlewares,services)
-MongoDB
-Redis 
-Razorpay Integration
-JWT token
+Node.js,
+Express.js(routes,models,middlewares,services),
+MongoDB,
+Redis, 
+Razorpay Integration,
+JWT token,
 Nodemailer (Usage)
 
 
@@ -15,14 +15,14 @@ Nodemailer (Usage)
 # React + Vite
 
 --Admin Side---
-Admin Dashbaord
-Admin can see user payment,Issue refunds, user blocking & activation, send reminder about payments(by email)
-Admin have so many major controlable power(Uploading movies, Publishing movies, Adding payment plans, etc..) 
+Admin Dashbaord,
+Admin can see user payment,Issue refunds, user blocking & activation, send reminder about payments(by email),
+Admin have so many major controlable power(Uploading movies, Publishing movies, Adding payment plans, etc..),
 
 -- Client side ---
-Client History view
-Client WatchList view
-Client Account Transfer, Profile Update, Password Changing
+Client History view,
+Client WatchList view,
+Client Account Transfer, Profile Update, Password Changing,
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
